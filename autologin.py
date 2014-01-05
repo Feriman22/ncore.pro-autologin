@@ -39,7 +39,7 @@ if __name__ == '__main__':
     login_form = None
     for form in mech.forms():
         # If page used dynamic names for login form like 'login142', 'login189', ...
-        if form.attrs['name'].startswith('login'):
+        if form.attrs['id'].startswith('login'):
             login_form = form
             break
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
     # Set focus on form
     mech.form = login_form
-    mech['username'] = USERNAME
+    mech['name'] = USERNAME
     mech['password'] = PASSWORD
     result = mech.submit().read()
     if 'Username or password did not match' in result:
