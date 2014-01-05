@@ -39,7 +39,7 @@ if __name__ == '__main__':
     login_form = None
     for form in mech.forms():
         # If page used dynamic names for login form like 'login142', 'login189', ...
-        if form.attrs['id'].startswith('login'):
+        if form.attrs['name'].startswith('login'):
             login_form = form
             break
 
