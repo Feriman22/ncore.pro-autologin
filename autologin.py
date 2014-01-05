@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 #
-# Logs in to dyndns so your account is kept active.
+# Logs in to ncore.cc so your account is kept active.
 #
 
 import random
@@ -33,12 +33,12 @@ if __name__ == '__main__':
     mech.set_handle_redirect(True)
     mech.set_handle_referer(True)
     mech.addheaders = [('User-agent', random.choice(USER_AGENTS))]
-    mech.open('https://account.dyn.com/')
+    mech.open('https://ncore.cc/login.php')
 
     # find first form that has id starting with 'login'
     login_form = None
     for form in mech.forms():
-        # DynDNS used dynamic names for login form like 'login142', 'login189', ...
+        # If page used dynamic names for login form like 'login142', 'login189', ...
         if form.attrs['id'].startswith('login'):
             login_form = form
             break
