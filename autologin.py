@@ -18,7 +18,7 @@ except ImportError:
     sys.exit(-1)
 
 
-SEARCH_STR = '&nbsp;<b>{0}</b></span>'
+SEARCH_STR = '<a href="profile.php">{0}</a>'
 
 USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36',
@@ -50,8 +50,8 @@ if __name__ == '__main__':
 
     # Set focus on form
     mech.form = login_form
-    mech['name'] = USERNAME
-    mech['password'] = PASSWORD
+    mech['nev'] = USERNAME
+    mech['pass'] = PASSWORD
     result = mech.submit().read()
     if 'Username or password did not match' in result:
         sys.stderr.write("Username or password incorrect.\n")
