@@ -33,7 +33,7 @@ if __name__ == '__main__':
     mech.set_handle_redirect(True)
     mech.set_handle_referer(True)
     mech.addheaders = [('User-agent', random.choice(USER_AGENTS))]
-    mech.open('https://ncore.cc/login.php')
+    mech.open('https://ncore.pro/login.php')
 
     # find first form that has id starting with 'login'
     login_form = None
