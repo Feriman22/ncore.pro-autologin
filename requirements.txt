@@ -1,3 +1,8 @@
 Required python module:
 
 mechanize
+
+Install it by runnign these below commands on Debian:
+
+sudo apt-get install python3-pip
+sudo pip install mechanize
