@@ -1,6 +1,6 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 #
-# Logs in to ncore.cc so your account is kept active.
+# Logs in to ncore.pro so your account is kept active.
 #
 
 import random
@@ -8,15 +8,16 @@ import sys
 
 import mechanize
 
-try:
-    from settings import USERNAME, PASSWORD
-except ImportError:
-    print "You need to create a settings.py file with the following content:"
-    print "USERNAME = 'my_username_here'"
-    print "PASSWORD = 'my_password_here'"
-    print "\n"
-    sys.exit(-1)
+sys.dont_write_bytecode = True
 
+try:
+    from ncorelogininfo import USERNAME, PASSWORD
+except ImportError:
+    print("You need to create a ncorebettyke87login.py file with the following content:")
+    print("USERNAME = 'my_username_here'")
+    print("PASSWORD = 'my_password_here'")
+    print("\n")
+    sys.exit(-1)
 
 SEARCH_STR = '<a href="profile.php">{0}</a>'
 
@@ -53,16 +54,16 @@ if __name__ == '__main__':
     mech['nev'] = USERNAME
     mech['pass'] = PASSWORD
     result = mech.submit().read()
-    if 'Username or password did not match' in result:
+    if 'Username or password did not match'.encode('utf-8') in result:
         sys.stderr.write("Username or password incorrect.\n")
-        sys.stderr.write("Please check your credentials in settings.py\n")
+        sys.stderr.write("Please check your credentials in ncorebettyke87login.py\n")
         errorlevel = -1
-    elif SEARCH_STR.format(USERNAME) not in result:
+    elif SEARCH_STR.format(USERNAME).encode('utf-8') not in result:
         sys.stderr.write("Didn't find welcome message in response.\n")
         sys.stderr.write("Something might be wrong. Log in manually.\n")
         errorlevel = -1
     else:
-        print 'Logged in successfully.'
+        print('Logged in successfully.')
         errorlevel = 0
     mech.close()
     sys.exit(errorlevel)
