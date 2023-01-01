@@ -13,7 +13,7 @@ sys.dont_write_bytecode = True
 try:
     from ncorelogininfo import USERNAME, PASSWORD
 except ImportError:
-    print("You need to create a ncorebettyke87login.py file with the following content:")
+    print("You need to create a ncorelogininfo file with the following content:")
     print("USERNAME = 'my_username_here'")
     print("PASSWORD = 'my_password_here'")
     print("\n")
@@ -56,7 +56,7 @@ if __name__ == '__main__':
     result = mech.submit().read()
     if 'Username or password did not match'.encode('utf-8') in result:
         sys.stderr.write("Username or password incorrect.\n")
-        sys.stderr.write("Please check your credentials in ncorebettyke87login.py\n")
+        sys.stderr.write("Please check your credentials in ncorelogininfo\n")
         errorlevel = -1
     elif SEARCH_STR.format(USERNAME).encode('utf-8') not in result:
         sys.stderr.write("Didn't find welcome message in response.\n")
