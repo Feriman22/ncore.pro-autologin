@@ -15,3 +15,9 @@ This script can be used to automatically login to ncore.pro, so that your accoun
 This is because the policy is that you must log in once every 8 weeks or your account will be banned.
 
 Last tested: 01-01-2023
+
+---
+
+## Changelog
+
+01-01-2023 - python3 compatibility
