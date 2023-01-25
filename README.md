@@ -20,5 +20,5 @@ Last tested: 26-01-2023
 
 ## Changelog
 
-26-01-2023 - Up-to-date and extend user agents list
+26-01-2023 - Up-to-date and extend user agents list  
 01-01-2023 - python3 compatibility
