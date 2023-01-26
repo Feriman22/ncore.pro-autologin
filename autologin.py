@@ -64,7 +64,7 @@ if __name__ == '__main__':
         sys.stderr.write("Something might be wrong. Log in manually.\n")
         errorlevel = -1
     else:
-        print('Logged in successfully.')
+        print('Logged in successfully.') if "cron" not in sys.argv else None
         errorlevel = 0
     mech.close()
     sys.exit(errorlevel)
