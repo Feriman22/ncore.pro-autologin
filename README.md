@@ -20,5 +20,6 @@ Last tested: 26-01-2023
 
 ## Changelog
 
+26-01-2023 - Add argument "cron" to supress "Logged in successfully." message.   
 26-01-2023 - Up-to-date and extend user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)   
 01-01-2023 - python3 compatibility
