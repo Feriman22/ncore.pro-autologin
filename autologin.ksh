@@ -6,6 +6,7 @@
 #
 
 # Global variables
+URL="https://ncore.pro/login.php"
 curloutput="./curl.output"
 loginlocation="./ncorelogininfo.txt"
 cookies="./cookies.txt"
@@ -28,11 +29,13 @@ cleanup() { rm -f "$curloutput" "$cookies"; }
 # Run first cleanup
 cleanup
 
-if [[ -z $(curl -s 'https://ncore.pro/login.php' | grep -Eo '<form[^>]+id="login[^>]+>') ]]; then
+# Check login form on Ncore
+if [[ -z $(curl -s $URL | grep -Eo '<form[^>]+id="login[^>]+>') ]]; then
     echo "Could not find login form. This script may need updating or the website is not online."
     exit
 fi
 
+# List of agents (browsers)
 user_agents=(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
@@ -40,22 +43,13 @@ user_agents=(
     "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0"
 )
 
+# Choose a random agent
 random_user_agent=${user_agents[RANDOM % ${#user_agents[@]}]}
 
-curl -s 'https://ncore.pro/login.php' \
-    -H "User-Agent: $random_user_agent" \
-    --cookie-jar $cookies \
-    --data-urlencode "nev=$USERNAME" \
-    --data-urlencode "pass=$PASSWORD" \
-    --data-urlencode "submitted=1" \
-    --data-urlencode "remember_me=1" \
-    --data-urlencode "submitted=1" \
-    --data-urlencode "mibiztos=1" \
-    --data-urlencode "returnto=%2F" \
-    --data-urlencode "submitted=1" \
-    --data-urlencode "remember_me=1" \
-    --location > $curloutput
+# Login to Ncore
+curl -s $URL -H "User-Agent: $random_user_agent" --cookie-jar $cookies --data-urlencode "nev=$USERNAME" --data-urlencode "pass=$PASSWORD" --location > $curloutput
 
+# Check result
 if grep -q 'Username or password did not match' $curloutput || ! grep -q "$USERNAME" $curloutput; then
         echo "ERROR: Username or password is incorrect. Please check your credentials in ncorelogininfo.txt"
 else
