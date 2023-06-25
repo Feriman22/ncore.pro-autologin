@@ -20,7 +20,8 @@ Last tested: 25-06-2023
 
 ## Changelog
 
+25-06-2023 - Up-to-date and extended user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)  
 25-06-2023 - ksh version of the script has been released.
 26-01-2023 - Add argument "cron" to supress "Logged in successfully." message.   
-26-01-2023 - Up-to-date and extend user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)   
+26-01-2023 - Up-to-date and extended user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)   
 01-01-2023 - python3 compatibility
