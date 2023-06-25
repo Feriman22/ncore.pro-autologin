@@ -48,7 +48,6 @@ curl -s 'https://ncore.pro/login.php' \
     --data-urlencode "nev=$USERNAME" \
     --data-urlencode "pass=$PASSWORD" \
     --data-urlencode "submitted=1" \
-    --data-urlencode "login=Belépés" \
     --data-urlencode "remember_me=1" \
     --data-urlencode "submitted=1" \
     --data-urlencode "mibiztos=1" \
