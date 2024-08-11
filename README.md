@@ -14,7 +14,7 @@ Legutóbb tesztelve: 2024-05-19
 This script can be used to automatically login to ncore.pro, so that your account is not deleted due to inactivity.
 This is because the policy is that you must log in once every 8 weeks or your account will be banned.
 
-Last tested: 19-05-2024
+Last tested: 11-08-2024
 
 ---
 
