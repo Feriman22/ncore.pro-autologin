@@ -20,6 +20,7 @@ Last tested: 11-08-2024
 
 ## Changelog
 
+11-08-2024 - Up-to-date user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)  
 08-01-2024 - Simplify the code, up-to-date user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)  
 25-06-2023 - Up-to-date and extended user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)  
 25-06-2023 - ksh version of the script has been released.
