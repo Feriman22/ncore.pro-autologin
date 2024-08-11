@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# Logs in to ncore.pro so your account is kept active.
+# Log in to ncore.pro to keep your account active.
 # Originally located: https://github.com/Feriman22/ncore.pro-autologin
 # Written by Feriman22
 #
@@ -21,7 +21,7 @@ if [ -f $loginlocation ]; then
     exit
 fi
 
-# Check login form on Ncore
+# Check the login form on Ncore
 if [[ -z $(curl -s $URL | grep -Eo '<form[^>]+id="login[^>]+>') ]]; then
     echo "Could not find login form. This script may need updating or the website is not online."
     exit
@@ -45,6 +45,6 @@ curloutput="$(curl -s $URL -H "User-Agent: $random_user_agent" -c - --data-urlen
 if grep -q 'Username or password did not match' <<< "$curloutput" || ! grep -q "$USERNAME" <<< "$curloutput"; then
         echo "ERROR: Username or password is incorrect. Please check your credentials in ncorelogininfo.txt"
 else
-        # Supress this message by putting cron as a parameter
+        # Suppress this message by using cron as a parameter
         [[ "$1" != "cron" ]] && echo "Logged in successfully."
 fi
