@@ -6,7 +6,7 @@
 Ez a script az ncore.pro oldalra való automatikus bejelentkezéshez használható, hogy a fiókodat ne töröljék inaktivitás miatt.
 Mindezt azért, mert a szabályzat szerint 8 hetente egyszer kell bejelentkezned, különben a fiókod letiltásra kerül.
 
-Legutóbb tesztelve: 2024-05-19
+Legutóbb tesztelve: 2024-10-18
 
 
 ## English
@@ -14,12 +14,13 @@ Legutóbb tesztelve: 2024-05-19
 This script can be used to automatically login to ncore.pro, so that your account is not deleted due to inactivity.
 This is because the policy is that you must log in once every 8 weeks or your account will be banned.
 
-Last tested: 11-08-2024
+Last tested: 18-10-2024
 
 ---
 
 ## Changelog
 
+18-10-2024 - Up-to-date user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)
 11-08-2024 - Up-to-date user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)  
 08-01-2024 - Simplify the code, up-to-date user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)  
 25-06-2023 - Up-to-date and extended user agents list based on [this website](https://www.whatismybrowser.com/guides/the-latest-user-agent/)  
