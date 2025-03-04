@@ -22,7 +22,7 @@ if [ -f $loginlocation ]; then
 fi
 
 # Check the login form on Ncore
-if [[ -z $(curl -s $URL | grep -Eo '<form[^>]+id="login[^>]+>') ]]; then
+if ! curl -s $URL | grep -qEo '<form[^>]+id="login[^>]+>'; then
     echo "Could not find login form. This script may need updating or the website is not online."
     echo "You can find the latest version on GitHub: https://github.com/Feriman22/ncore.pro-autologin"
     exit 3
@@ -30,7 +30,7 @@ fi
 
 # Get the latest user agent
 UserAgent="$(curl -s "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome" | grep -Po '(?<=>)[^<]*Windows NT 10.0.*Chrome[^<]*(?=<)')"
-if ! grep -q "Chrome" <<< $NewUserAgent; then
+if ! grep -q "Chrome" <<< $UserAgent; then
     echo "Invalid UserAgent ($UserAgent). Report on GitHub. If the bug remains: https://github.com/Feriman22/ncore.pro-autologin"
     exit 4
 fi
