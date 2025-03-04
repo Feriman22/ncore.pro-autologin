@@ -30,7 +30,7 @@ fi
 
 # Get the latest user agent
 UserAgent="$(curl -s "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome" | grep -Po '(?<=>)[^<]*Windows NT 10.0.*Chrome[^<]*(?=<)')"
-if ! grep -q "Chrome" <<< $UserAgent; then
+if ! grep -q "Chrome" <<< "$UserAgent"; then
     echo "Invalid UserAgent ($UserAgent). Report on GitHub. If the bug remains: https://github.com/Feriman22/ncore.pro-autologin"
     exit 4
 fi
