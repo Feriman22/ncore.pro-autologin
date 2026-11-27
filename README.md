@@ -6,7 +6,7 @@
 Ez a script az ncore.pro oldalra való automatikus bejelentkezéshez használható, hogy a fiókodat ne töröljék inaktivitás miatt.
 Mindezt azért, mert a szabályzat szerint 8 hetente egyszer kell bejelentkezned, különben a fiókod letiltásra kerül.
 
-Legutóbb tesztelve: 2025-03-04
+Legutóbb tesztelve: 2026-11-27
 
 
 ## English
