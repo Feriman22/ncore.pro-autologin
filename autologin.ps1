@@ -8,6 +8,9 @@ param([string]$Mode)
 
 $ErrorActionPreference = 'Stop'
 
+# Hide the download progress bar (it also makes Invoke-WebRequest slow on PowerShell 5.1)
+$ProgressPreference = 'SilentlyContinue'
+
 # Windows PowerShell 5.1 may not enable TLS 1.2 by default
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
